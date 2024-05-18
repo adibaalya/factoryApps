@@ -27,10 +27,10 @@ workflows:
       - name: Run Firebase Test Lab Tests
         script: |
           set -ex
-          echo $GCLOUD_KEY_FILE | base64 --decode > ./factoryapps-f0cfaf6ebb20.json.json
-          ls -l ./gcloud_key_file.json
-          file ./gcloud_key_file.json
-          gcloud auth activate-service-account --key-file=gcloud_key_file.json
+          echo $GCLOUD_KEY_FILE | base64 --decode > ./factoryapps-f0cfaf6ebb20.json
+          ls -l ./factoryapps-f0cfaf6ebb20.json
+          file ./factoryapps-f0cfaf6ebb20.json
+          gcloud auth activate-service-account --key-file=factoryapps-f0cfaf6ebb20.json
           gcloud --quiet config set project $FIREBASE_PROJECT
 
           gcloud firebase test android run \
