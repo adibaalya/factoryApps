@@ -31,7 +31,7 @@ workflows:
           ls -l ./factoryapps-f0cfaf6ebb20.json
           file ./factoryapps-f0cfaf6ebb20.json
           gcloud auth activate-service-account --key-file=factoryapps-f0cfaf6ebb20.json
-          gcloud --quiet config set project $FIREBASE_PROJECT
+          gcloud --quiet config set project "factoryapps-6601c"
 
           gcloud firebase test android run \
             --type instrumentation \
