@@ -28,8 +28,6 @@ workflows:
         script: |
           set -ex
           echo $GCLOUD_KEY_FILE | base64 --decode > ./factoryapps-f0cfaf6ebb20.json
-          ls -l ./factoryapps-f0cfaf6ebb20.json
-          file ./factoryapps-f0cfaf6ebb20.json
           gcloud auth activate-service-account --key-file=factoryapps-f0cfaf6ebb20.json
           gcloud --quiet config set project "factoryapps-6601c"
 
