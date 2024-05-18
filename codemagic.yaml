@@ -1,9 +1,9 @@
 workflows:
-  android-workflow:
-    name: Android Workflow
+  andriod-workflow:
+    name: Andriod Workflow
     instance_type: mac_mini_m1
     max_build_duration: 30
-    environment: 
+    environment:
       groups:
         - google_credentials
       flutter: stable
@@ -11,7 +11,7 @@ workflows:
       cocoapods: default
       vars:
         FIREBASE_PROJECT: "factoryapps-6601c"
-    scripts: 
+    scripts:
       - name: Get Flutter packages
         script: |
           flutter packages pub get
@@ -24,21 +24,22 @@ workflows:
           cd android
           ./gradlew app:assembleAndroidTest
           ./gradlew app:assembleDebug -Ptarget="$CM_BUILD_DIR/integration_test/app_test.dart"
-
       - name: Run Firebase Test Lab Tests
         script: |
           set -ex
           echo $GCLOUD_KEY_FILE | base64 --decode > ./gcloud_key_file.json
           gcloud auth activate-service-account --key-file=gcloud_key_file.json
-          gcloud --quite config set project $FIREBASE_PROJECT
+          gcloud --quiet config set project $FIREBASE_PROJECT
 
           gcloud firebase test android run \
-           --type instrumentation \
-           --app build/app/outputs/apk/debug/app-debug.apk \
-           --test build/app/outputs/apk/androidTest/debug/app-debug-androidTest.apk \
-           --timeout 3m
-        artifacts:
-          - build/**/outputs/**/*.apk
-          - build/**/outputs/**/*.aab
-          - build/**/outputs/**/mapping.txt
-          - flutter_drive_log
+            --type instrumentation \
+            --app build/app/outputs/apk/debug/app-debug.apk \
+            --test build/app/outputs/apk/androidTest/debug/app-debug-androidTest.apk \
+            --timeout 3m
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - flutter_drive.log
+
+
