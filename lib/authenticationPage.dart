@@ -101,6 +101,7 @@ class _authenticationPageState extends State<authenticationPage> {
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 16),
                                   child: TextField(
+                                    key: Key('otp'),
                                     textAlign: TextAlign.center,
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(),
@@ -144,6 +145,7 @@ class _authenticationPageState extends State<authenticationPage> {
                           Padding(
                             padding: const EdgeInsets.only(top: 16.0, bottom: 5),
                             child: ElevatedButton(
+                              key: Key('activateButton'),
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.purple[800],
                                 backgroundColor: Colors.purple[50],

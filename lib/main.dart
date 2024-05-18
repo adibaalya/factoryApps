@@ -54,7 +54,7 @@ class _HomepageState extends State<Homepage> {
               Padding(
                 padding: const EdgeInsets.all(11.0),
                 child: Container(
-                  height: 0.65 * height,
+                  height: 0.6 * height,
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 238, 236, 236),
                     borderRadius: BorderRadius.circular(12),
@@ -159,6 +159,7 @@ class _HomepageState extends State<Homepage> {
                           child: Padding(
                             padding: const EdgeInsets.all(15.0),
                             child: FloatingActionButton(
+                              key: Key("addButton"),
                               onPressed: () {
                                 Navigator.push(
                                     context,
@@ -225,7 +226,7 @@ class _HomepageState extends State<Homepage> {
                                     IconButton(
                                       icon: Icon(Icons.edit),
                                       color: Colors.purple,
-                                      onPressed: () {},
+                                      onPressed: (){},
                                     ),
                                   ],
                                 ),
@@ -248,6 +249,7 @@ class _HomepageState extends State<Homepage> {
                                           fontSize: 20),
                                     ),
                                     Container(
+                                      key: Key('SteamPressure'),
                                       height: 50,
                                       width: 150,
                                       decoration: BoxDecoration(
@@ -296,6 +298,7 @@ class _HomepageState extends State<Homepage> {
                                             200], // Adjust the color as needed
                                       ),
                                       child: TextField(
+                                        key: Key('SteamFlow'),
                                         decoration: InputDecoration(
                                           contentPadding:
                                               const EdgeInsets.symmetric(
@@ -335,6 +338,7 @@ class _HomepageState extends State<Homepage> {
                                             200], // Adjust the color as needed
                                       ),
                                       child: TextField(
+                                        key: Key('waterLevel'),
                                         decoration: InputDecoration(
                                           contentPadding:
                                               const EdgeInsets.symmetric(
@@ -374,6 +378,7 @@ class _HomepageState extends State<Homepage> {
                                             200], // Adjust the color as needed
                                       ),
                                       child: TextField(
+                                        key: Key('powerFrequency'),
                                         decoration: InputDecoration(
                                           contentPadding:
                                               const EdgeInsets.symmetric(
@@ -413,6 +418,7 @@ class _HomepageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     GestureDetector(
+                      key: Key('factory1'),
                       onTap: () {
                         changeFactoryIndex(0);
                       },
@@ -451,6 +457,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     GestureDetector(
+                      key: Key('factory2'),
                       onTap: () {
                         changeFactoryIndex(1);
                       },
@@ -498,14 +505,17 @@ class _HomepageState extends State<Homepage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
+            key: Key("profile"),
             label: '',
             icon: Icon(Icons.person),
           ),
           BottomNavigationBarItem(
+            key: Key("home"),
             label: '',
             icon: Icon(Icons.home_outlined),
           ),
           BottomNavigationBarItem(
+            key: Key("settings"),
             label: '',
             icon: Icon(Icons.settings),
           ),
@@ -532,7 +542,7 @@ class _HomepageState extends State<Homepage> {
           [Color rangeColor = Colors.green]) =>
       Container(
         width: 160,
-        height: 165,
+        height: 130,
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(8)),
         child: Center(

@@ -74,6 +74,7 @@ class _InvitationPageState extends State<InvitationPage> {
                       Padding(
                         padding: EdgeInsets.only(top: 10.0),
                         child: TextField(
+                          key: Key('owner'),
                           enabled: true,
                           decoration: InputDecoration(
                             filled: true,
@@ -112,6 +113,7 @@ class _InvitationPageState extends State<InvitationPage> {
                               child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             child: TextField(
+                              key: Key('phone'),
                               enabled: true,
                               decoration: InputDecoration(
                                   filled: true,
@@ -132,6 +134,7 @@ class _InvitationPageState extends State<InvitationPage> {
                           width: 0.8*width,
                           height: 50,
                           child: ElevatedButton(
+                            key: Key('submit'),
                             style: ElevatedButton.styleFrom(
                               foregroundColor: const Color.fromARGB(255, 137, 49, 191),
                               backgroundColor: const Color.fromARGB(255, 162, 160, 160),

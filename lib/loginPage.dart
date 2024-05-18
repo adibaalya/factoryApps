@@ -104,6 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10),
                           child: TextField(
+                            key: Key('phone'),
                             enabled: true,
                             decoration: InputDecoration(
                                 filled: true,
@@ -142,6 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
+                            key: const Key('activationCodeButton'),
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.purple[800],
                               backgroundColor: Colors.purple[50],
