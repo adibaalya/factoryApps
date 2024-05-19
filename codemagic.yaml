@@ -1,6 +1,6 @@
 workflows:
-  andriod-workflow:
-    name: Andriod Workflow
+  android-workflow:
+    name: Android Workflow
     instance_type: mac_mini_m1
     max_build_duration: 30
     environment:
@@ -10,7 +10,7 @@ workflows:
       xcode: latest
       cocoapods: default
       vars:
-        FIREBASE_PROJECT: "factoryapps-6601c"
+        FIREBASE_PROJECT: "lab-5-9b7da"
     scripts:
       - name: Get Flutter packages
         script: |
