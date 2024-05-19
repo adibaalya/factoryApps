@@ -2,6 +2,7 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'
 }
 
 def localProperties = new Properties()
@@ -23,8 +24,8 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace "com.example.factory_apps"
-    compileSdk flutter.compileSdkVersion
+    namespace "com.example.factory_apps5"
+    compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -66,10 +67,10 @@ flutter {
 }
 
 dependencies {
-     testImplementation 'junit:junit:4.12'
-
-     implementation "org-jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"|
-
-     androidTestImplementation 'androidx.test:runner:1.2.0'
+    implementation platform('com.google.firebase:firebase-bom:33.0.0')
+    testImplementation 'junit:junit:4.12'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    
+    androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
