@@ -29,7 +29,7 @@ workflows:
           set -ex
           echo "GCLOUD_KEY_FILE:" $GCLOUD_KEY_FILE
           echo $GCLOUD_KEY_FILE | base64 --decode
-          echo $GCLOUD_KEY_FILE | base64 --decode > /Users/nuradibaalyashamsulkamalrujan/DownloadsDownloads/factoryapps-f0cfaf6ebb20.json
+          echo $GCLOUD_KEY_FILE | base64 --decode > /Users/nuradibaalyashamsulkamalrujan/Downloads/factoryapps-f0cfaf6ebb20.json
           ls -l /Users/nuradibaalyashamsulkamalrujan/Downloads/factoryapps-f0cfaf6ebb20.json
           gcloud auth activate-service-account --key-file=/Users/nuradibaalyashamsulkamalrujan/Downloads/factoryapps-f0cfaf6ebb20.json
           gcloud --quiet config set project "factoryapps-6601c"
